@@ -1,0 +1,163 @@
+.widget {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl) var(--space-2xl);
+    margin-top: var(--space-xl);
+    animation: fadeInUp 0.5s ease 0.2s both;
+}
+
+.title {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-xs);
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-lg);
+}
+
+/* Vote Buttons */
+.buttons {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.voteBtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--border-color);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.voteBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.voteBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.upBtn:hover:not(:disabled) {
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: var(--success);
+    box-shadow: var(--shadow-success);
+}
+
+.downBtn:hover:not(:disabled) {
+    border-color: var(--danger);
+    background: var(--danger-bg);
+    color: var(--danger);
+    box-shadow: var(--shadow-danger);
+}
+
+.upBtn.active {
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: var(--success);
+    box-shadow: var(--shadow-success);
+}
+
+.downBtn.active {
+    border-color: var(--danger);
+    background: var(--danger-bg);
+    color: var(--danger);
+    box-shadow: var(--shadow-danger);
+}
+
+.voteIcon {
+    font-size: 1.2rem;
+}
+
+.voteCount {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-width: 28px;
+    text-align: center;
+}
+
+/* Progress Bar */
+.barContainer {
+    margin-bottom: var(--space-md);
+}
+
+.barLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+}
+
+.barLabelUp {
+    color: var(--success);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.barLabelDown {
+    color: var(--danger);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.bar {
+    height: 8px;
+    background: var(--danger-bg);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success), #4ade80);
+    border-radius: var(--radius-full);
+    transition: width 0.6s ease;
+    min-width: 2%;
+}
+
+.totalVotes {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: var(--space-sm);
+}
+
+.votedMsg {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .widget {
+        padding: var(--space-lg);
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .voteLabel {
+        display: inline;
+    }
+}
