@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./app/*"
+      ],
+      "@generated/prisma": [
+        "./generated/prisma"
+      ]
+    },
+    "baseUrl": "."
+  }
+}
